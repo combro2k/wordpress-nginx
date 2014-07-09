@@ -21,6 +21,9 @@ if [[ ! -d "/var/lib/wordpress/wp-content" ]]; then
 fi
 
 if [[ -d "/var/lib/wordpress/wp-content" ]]; then
+    if [[ -d /data/wp-content ]]; then
+        rm -fr /data/wp-content
+    fi
     ln -nfs /var/lib/wordpress/wp-content /data/wp-content
 fi
 
