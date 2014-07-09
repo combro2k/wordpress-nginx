@@ -11,8 +11,16 @@ if [[ ! -f "/var/lib/wordpress/wp-config.php" && -f "/data/wp-config.php" ]]; th
     ln -nfs /var/lib/wordpress/wp-config.php /data/wp-config.php
 fi
 
+if [[ -f "/var/lib/wordpress/wp-config.php" ]]; then
+    ln -nfs /var/lib/wordpress/wp-config.php /data/wp-config.php
+fi
+
+
 if [[ ! -d "/var/lib/wordpress/wp-content" ]]; then
     mv /data/wp-content /var/lib/wordpress/wp-content
+fi
+
+if [[ ! -d "/var/lib/wordpress/wp-content" ]]; then
     ln -nfs /var/lib/wordpress/wp-content /data/wp-content
 fi
 
