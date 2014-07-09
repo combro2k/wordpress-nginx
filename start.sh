@@ -20,7 +20,7 @@ if [[ ! -d "/var/lib/wordpress/wp-content" ]]; then
     mv /data/wp-content /var/lib/wordpress/wp-content
 fi
 
-if [[ ! -d "/var/lib/wordpress/wp-content" ]]; then
+if [[ -d "/var/lib/wordpress/wp-content" ]]; then
     ln -nfs /var/lib/wordpress/wp-content /data/wp-content
 fi
 
