@@ -20,6 +20,9 @@ ADD nginx.conf /etc/nginx/nginx.conf
 ADD nginx-site.conf /etc/nginx/sites-available/default
 RUN sed -i -e 's/^listen =.*/listen = \/var\/run\/php5-fpm.sock/' /etc/php5/fpm/pool.d/www.conf
 
+RUN mkdir -p /etc/nginx/scripts
+ADD proxy_client_ip.php /etc/nginx/scripts/proxy_client_ip.php
+
 RUN mkdir /data
 
 RUN curl https://wordpress.org/latest.tar.gz | tar zxv -C /data --strip-components=1
