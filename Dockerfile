@@ -28,6 +28,8 @@ RUN mkdir /data
 RUN curl https://wordpress.org/latest.tar.gz | tar zxv -C /data --strip-components=1
 RUN chown -R www-data:www-data /data
 
+RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
 # Create the section for persistent files
 RUN mkdir /var/lib/wordpress
 
